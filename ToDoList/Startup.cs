@@ -13,9 +13,11 @@ namespace ToDoList
   {
     public Startup(IWebHostEnvironment env)
     {
+      AppSettings.CheckSettings();
+      
       var builder = new ConfigurationBuilder()
-          .SetBasePath(env.ContentRootPath)
-              .AddJsonFile("appsettings.json");
+        .SetBasePath(env.ContentRootPath)
+        .AddJsonFile("appsettings.json");
       Configuration = builder.Build();
     }
 
